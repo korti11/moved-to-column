@@ -1,25 +1,16 @@
 name: "units-test"
 on:
-  pull_request:
-  push:
-    branches:
-      - master
-      - 'releases/*'
+  project_card:
+    types: [moved]
 
 jobs:
-  # unit tests
-  units:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - run: npm ci
-    - run: npm test
-
   # test action works running from the graph  
   test:
     runs-on: ubuntu-latest
+    env:
+      - GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
     steps:
     - uses: actions/checkout@v1
     - uses: ./
-      with:
-        milliseconds: 1000
+      id: project_column
+    - run: echo ${{steps.project_column.name}}

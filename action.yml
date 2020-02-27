@@ -1,13 +1,8 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
-inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
+name: 'Moved to column'
+description: 'Gets the name of the column the project card got moved to.'
 outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  column_name: # output will be available to future steps 
+    description: 'Name of the column'
 runs:
   using: 'node12'
   main: 'dist/index.js'
