@@ -506,7 +506,7 @@ async function run() {
     validateEvent(eventName, action);
 
     const octokit = new github.GitHub(process.env.GITHUB_TOKEN)
-    const { data: projectColumn } = await octokit.projects.getCard({
+    const { data: projectColumn } = await octokit.projects.getColumn({
       column_id: columnId
     });
 
