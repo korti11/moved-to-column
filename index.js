@@ -20,6 +20,7 @@ async function run() {
       column_id: columnId
     });
 
+    core.info(`Column name: ${projectColumn.name}`)
     core.setOutput("column_name", projectColumn.name)
   } 
   catch (error) {
