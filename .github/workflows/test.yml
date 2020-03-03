@@ -13,4 +13,4 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ./
       id: project_column
-    - run: echo ${{steps.project_column.column_name}}
+    - run: echo ${{steps.project_column.outputs.column_name}}
